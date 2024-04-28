@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {  
+  height: 150vh;
+  width: 100%;
+  cursor: url(ressources/cursors/normal.svg), auto;
+  background-color: #0c0f0a;
+   font-family: 'Poppins';
+}
+
+
+
+
+/*/////////////////////---HEADER---\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
+
+
+
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 75px; /* Initial height */
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 7.5%;
+  transition: top 0.5s ease, height 0.5s ease, border-radius 1s ease, padding 0.5s ease, background-color 0.5s ease;
+  backdrop-filter: blur(5px); /* Adjust the blur value as needed for the glassy effect */
+}
+
+header.island {
+  position: fixed;
+  border-radius: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  backdrop-filter: none;
+  top: 10px; /* Adjust the top spacing as needed */
+  height: 50px; /* Height when it becomes an island */
+  border-radius: 40px; /* Adjust the radius as needed */
+  padding: 10px 20px; /* Adjust the padding for stretching and moving away from the sides */
+  backdrop-filter: blur(20px); /* Adjust the blur value as needed for the glassy effect */
+  transition: top 0.5s ease, height 0.5s ease, border-radius 0.5s ease, padding 0.5s ease, background-color 0.5s ease, backdrop-filter 0.5s ease;
+}
+
+.navlinks{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.navlinks ul li{
+  margin-right: 20px;
+  margin-right: 15px;
+}
+
+.navlinks ul li:last-child{
+  margin-right: 5px;
+}
+
+.navlinks ul li img{
+  position: absolute;
+}
+ul li {
+  list-style: none;
+}
+
+.icon-container {
+  display: inline-block;
+  position: relative;
+  margin: 10px;
+  overflow: hidden;
+}
+
+/* Style for the icon image */
+
+.icon-container img {
+  width: 36px; /* Adjust the width of the icon */
+  height: auto;
+  display: block;
+  border-radius: 2px;
+}
+
+.navlinks ul li:before{
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #66ccff; /* Set the underline color */
+  transition: width 0.3s ease; /* Adjust the transition duration and easing as needed */
+}
+
+.navlinks ul li img:hover:before{
+  width: 100%;
+}
+
+
+/* Underline animation on hover */
+
+.icon-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #3498db; /* Change the color as needed */
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+/* Trigger the animation on hover */
+
+.icon-container:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+li,
+a,
+button {
+  font-family: 'Trebuchet MS';
+  font-weight: 500;
+  font-size: 16px;
+  text-decoration: none;
+  cursor: url(ressources/cursors/handpointing.svg), pointer;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+
+.logo {
+  cursor: url(ressources/cursors/handpointing.svg), pointer;
+  color: #edf0f1;
+  font-size: 19px;
+  font-family: 'Abril Fatface';
+  font-weight: 400;
+}
+
+
+/*////---SCROLLBAR---\\\\*/
+
+
+body::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: #04052e;        /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #8900f2;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid #6a00f4;  /* creates padding around scroll thumb */
+}
+
+
+
+/*///---MIDDLE SECTION---\\\*/
+
+
+
+/* Modify the existing styles for the .middle class */
+.middle {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  background-color: #333; /* Change the background color as desired */
+  padding: 20px; /* Add padding as needed */
+}
+.middle-text {
+  max-width: 45%; /* Limit the width of text to 50% of the container */ 
+  cursor: url(ressources/cursors/textcursor.svg), text;
+}
+.middle-text h3{
+  margin-bottom: 5px;
+  font-size: 30px;
+}
+.middle-text h1{
+  font-family: 'Abril Fatface';
+  font-weight: 575;
+  color: #fdc500;
+  font-size: 70px;
+  margin-bottom: 15px;
+}
+/* Neon glow animation */
+@keyframes neon-glow {
+  0% { text-shadow: 0 0 10px #fff, 0 0 20px #00f, 0 0 30px #0ff, 0 0 40px #00f, 0 0 70px #0ff, 0 0 80px #0ff, 0 0 100px #0ff, 0 0 150px #0ff; }
+  50% { text-shadow: 0 0 10px #fff, 0 0 30px #0ff, 0 0 50px #0ff, 0 0 70px #0ff, 0 0 100px #0ff, 0 0 120px #0ff, 0 0 150px #0ff, 0 0 200px #0ff; }
+  100% { text-shadow: 0 0 10px #fff, 0 0 20px #00f, 0 0 30px #0ff, 0 0 40px #00f, 0 0 70px #0ff, 0 0 80px #0ff, 0 0 100px #0ff, 0 0 150px #0ff; }
+}
+
+/* Apply the animation to the h1 element */
+h1.neon-glow {
+  animation: neon-glow 1.5s ease-in-out infinite; /* Adjust animation duration and timing as needed */
+  color: color-mix(in srgb, color percentage, color percentage); /* Hide original text color */
+}
+
+
+.middle-text h2{
+  font-weight: 400;
+  font-size: 20px;
+}
+section img{
+  height: 400px;
+  width: 800px;
+  cursor: url(ressources/cursors/notallowed.svg), not-allowed;
+}
